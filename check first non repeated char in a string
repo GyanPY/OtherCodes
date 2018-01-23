@@ -1,0 +1,37 @@
+class p {
+   char chec(String str)
+    {
+        char[] ch = str.toCharArray();
+        int len = ch.length;
+        Arrays.sort(ch);
+        System.out.println(ch);
+        for(int i=0;i<len;i++)
+        {
+           for(int j=1;j<len;j++)
+           {
+               if(ch[i]!=ch[j])
+               {
+                   i=j;
+                   if(j==len-1)
+                   {
+                       System.out.println(ch[j]);
+                       return ch[j];
+                       
+                   }
+                   else if(ch[j]!=ch[j+1])
+                   {
+                       System.out.println(ch[j]);
+                       return ch[j];
+                   }
+               }
+           }
+        }
+       return 0; 
+    }
+    public static void main(String... s)
+    {
+        p p1 = new p();
+        String str = "aaabbbcdceffgeehhjjiiklmmoonnoewqsre";
+        p1.chec(str);
+    }
+}
